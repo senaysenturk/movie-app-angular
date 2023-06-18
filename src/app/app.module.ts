@@ -7,8 +7,6 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
 import { CategoryComponent } from './category/category.component';
 import { MoviesComponent } from './movies/movies.component';
-import { MovieComponent } from './movies/movie/movie.component';
-import { MovieDetailComponent } from './movies/movie-detail/movie-detail.component';
 import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
@@ -17,8 +15,6 @@ import { FooterComponent } from './footer/footer.component';
     NavbarComponent,
     CategoryComponent,
     MoviesComponent,
-    MovieComponent,
-    MovieDetailComponent,
     FooterComponent,
   ],
   imports: [BrowserModule, NgbModule, FormsModule],

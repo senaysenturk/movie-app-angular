@@ -1,2 +1,23 @@
-<p>movies works!</p>
-<app-movie></app-movie>
+<div *ngFor="let movie of movies">
+  <div class="card mb-3">
+    <div class="row">
+      <div class="col-md-3">
+        <img
+          class="img-fluid rounded-start"
+          style="width: 250px"
+          src="{{ movie.imageUrl }}"
+          alt=""
+        />
+      </div>
+      <div class="col-md-9">
+        <div class="card-body">
+          <h2 class="card-title">{{ movie.title }}</h2>
+          <p class="card-text">
+            {{ movie.description }}
+          </p>
+          <button class="btn btn-sm btn-outline-primary">Details</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
