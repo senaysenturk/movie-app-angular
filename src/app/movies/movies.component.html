@@ -6,7 +6,13 @@
   placeholder="Search"
   [(ngModel)]="searchMovie"
 />
-
+<div
+  *ngIf="(movies | movieFilter : searchMovie).length === 0"
+  class="alert alert-warning"
+  role="alert"
+>
+  Movie(s) not found.
+</div>
 <div *ngFor="let movie of movies | movieFilter : searchMovie">
   <div class="card mb-3" id="{{ movie.id }}">
     <div class="row">
