@@ -4,10 +4,11 @@ export class CategoryRepository {
   private categories: Category[];
   constructor() {
     this.categories = [
-      { id: 1, name: 'Macera' },
-      { id: 2, name: 'Romantik' },
-      { id: 3, name: 'Bilim Kurgu' },
-      { id: 4, name: 'Fantastik' },
+      { id: 1, name: 'All Categories' },
+      { id: 2, name: 'Adventure' },
+      { id: 3, name: 'Romance' },
+      { id: 4, name: 'Science Fiction' },
+      { id: 5, name: 'Fantastic' },
     ];
   }
   getCategory(): Category[] {
