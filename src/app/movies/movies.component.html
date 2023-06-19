@@ -8,7 +8,7 @@
 />
 
 <div *ngFor="let movie of movies | movieFilter : searchMovie">
-  <div class="card mb-3">
+  <div class="card mb-3" id="{{ movie.id }}">
     <div class="row">
       <div class="col-md-3">
         <img
@@ -24,7 +24,16 @@
           <p class="card-text">
             {{ movie.description }}
           </p>
-          <button class="btn btn-sm btn-outline-primary">Details</button>
+          <div class="buttons">
+            <button class="btn btn-sm btn-outline-primary">Details</button>
+            <button
+              class="btn btn-sm btn-primary mx-1"
+              (click)="addRemoveList($event, movie.id)"
+              [ngClass]="{ 'btn-danger': isInList(movie.id) }"
+            >
+              {{ !isInList(movie.id) ? "Add to List" : "Remove from List" }}
+            </button>
+          </div>
         </div>
       </div>
     </div>
