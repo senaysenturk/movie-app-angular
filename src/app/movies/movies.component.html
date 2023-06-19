@@ -1,4 +1,13 @@
-<div *ngFor="let movie of movies">
+<input
+  class="form-control mb-3"
+  type="text"
+  name="search"
+  id="search"
+  placeholder="Search"
+  [(ngModel)]="searchMovie"
+/>
+
+<div *ngFor="let movie of movies | movieFilter : searchMovie">
   <div class="card mb-3">
     <div class="row">
       <div class="col-md-3">

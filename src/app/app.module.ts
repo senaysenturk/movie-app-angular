@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { CategoryComponent } from './category/category.component';
 import { MoviesComponent } from './movies/movies.component';
 import { FooterComponent } from './footer/footer.component';
+import { MovieFilterPipe } from './pipes/movie-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { FooterComponent } from './footer/footer.component';
     CategoryComponent,
     MoviesComponent,
     FooterComponent,
+    MovieFilterPipe,
   ],
   imports: [BrowserModule, NgbModule, FormsModule],
   providers: [],
