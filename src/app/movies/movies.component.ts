@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Movie } from '../models/movie';
 import { MovieRepository } from '../models/movie.repository';
 
+declare let alertify: any;
+
 @Component({
   selector: 'app-movies',
   templateUrl: './movies.component.html',
@@ -22,11 +24,12 @@ export class MoviesComponent implements OnInit {
     const index = this.movieList.indexOf(movieId);
     if (index === -1) {
       this.movieList.push(movieId);
+      alertify.success('Movie added');
     } else {
       this.movieList.splice(index, 1);
+      alertify.error('Movie removed');
     }
-
-    console.log(this.movieList);
+    // console.log(this.movieList);
 
     return this.movieList;
   }
