@@ -9,6 +9,7 @@ import { CategoryComponent } from './category/category.component';
 import { MoviesComponent } from './movies/movies.component';
 import { FooterComponent } from './footer/footer.component';
 import { MovieFilterPipe } from './pipes/movie-filter.pipe';
+import { AlertifyService } from './service/alertify.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { MovieFilterPipe } from './pipes/movie-filter.pipe';
     MovieFilterPipe,
   ],
   imports: [BrowserModule, NgbModule, FormsModule],
-  providers: [],
+  providers: [AlertifyService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

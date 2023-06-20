@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Movie } from '../models/movie';
 import { MovieRepository } from '../models/movie.repository';
-
-declare let alertify: any;
+import { AlertifyService } from '../service/alertify.service';
 
 @Component({
   selector: 'app-movies',
@@ -15,7 +14,7 @@ export class MoviesComponent implements OnInit {
   movieRepository: MovieRepository;
   searchMovie: string = '';
   btn: any;
-  constructor() {
+  constructor(private alertify: AlertifyService) {
     this.movieRepository = new MovieRepository();
     this.movies = this.movieRepository.getMovies();
   }
@@ -24,12 +23,12 @@ export class MoviesComponent implements OnInit {
     const index = this.movieList.indexOf(movieId);
     if (index === -1) {
       this.movieList.push(movieId);
-      alertify.success(
+      this.alertify.success(
         `${this.movies.find((movie) => movie.id == movieId)?.title} added`
       );
     } else {
       this.movieList.splice(index, 1);
-      alertify.error(
+      this.alertify.error(
         `${this.movies.find((movie) => movie.id == movieId)?.title} removed`
       );
     }
