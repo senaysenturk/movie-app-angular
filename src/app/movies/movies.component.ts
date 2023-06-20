@@ -24,10 +24,14 @@ export class MoviesComponent implements OnInit {
     const index = this.movieList.indexOf(movieId);
     if (index === -1) {
       this.movieList.push(movieId);
-      alertify.success('Movie added');
+      alertify.success(
+        `${this.movies.find((movie) => movie.id == movieId)?.title} added`
+      );
     } else {
       this.movieList.splice(index, 1);
-      alertify.error('Movie removed');
+      alertify.error(
+        `${this.movies.find((movie) => movie.id == movieId)?.title} removed`
+      );
     }
     // console.log(this.movieList);
 
