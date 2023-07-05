@@ -10,6 +10,7 @@ import { MoviesComponent } from './movies/movies.component';
 import { FooterComponent } from './footer/footer.component';
 import { MovieFilterPipe } from './pipes/movie-filter.pipe';
 import { AlertifyService } from './service/alertify.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { AlertifyService } from './service/alertify.service';
     FooterComponent,
     MovieFilterPipe,
   ],
-  imports: [BrowserModule, NgbModule, FormsModule],
+  imports: [BrowserModule, NgbModule, FormsModule, HttpClientModule],
   providers: [AlertifyService],
   bootstrap: [AppComponent],
 })
